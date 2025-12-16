@@ -1,0 +1,11 @@
+{
+  "domain": "ha_geupshik_allimi",
+  "name": "HA 급식알리미 (HA Geupshik Allimi)",
+  "codeowners": ["@mahlernim"],
+  "config_flow": true,
+  "documentation": "https://github.com/mahlernim/ha-geupshik-allimi",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/mahlernim/ha-geupshik-allimi/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
