@@ -1,0 +1,14 @@
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Test scripts
+test_component.py
+school_meal_bot.py
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Config files (just in case)
+config.json

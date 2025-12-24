@@ -53,6 +53,21 @@ action:
       message: "{{ state_attr('sensor.ha_geupshik_allimi_lunch_today', 'menu_tts') }}"
 ```
 
+**예: 밤 11시에 내일 급식 메뉴 미리 알려주기**
+
+```yaml
+alias: "내일 급식 미리 알림"
+description: "매일 밤 11시에 다음 날 급식 메뉴를 미리 알려줍니다."
+trigger:
+  - platform: time
+    at: "23:00:00"
+action:
+  - service: tts.cloud_say
+    data:
+      entity_id: media_player.bedroom_speaker
+      message: "{{ state_attr('sensor.ha_geupshik_allimi_lunch_tomorrow', 'menu_tts') }}"
+```
+
 ---
 
 ## English
@@ -93,4 +108,18 @@ action:
     data:
       entity_id: media_player.bedroom_speaker
       message: "{{ state_attr('sensor.ha_geupshik_allimi_lunch_today', 'menu_tts') }}"
+```
+
+**Example: Announce tomorrow's lunch at 11 PM**
+
+```yaml
+alias: "Tomorrow's Lunch Preview"
+trigger:
+  - platform: time
+    at: "23:00:00"
+action:
+  - service: tts.cloud_say
+    data:
+      entity_id: media_player.bedroom_speaker
+      message: "{{ state_attr('sensor.ha_geupshik_allimi_lunch_tomorrow', 'menu_tts') }}"
 ```

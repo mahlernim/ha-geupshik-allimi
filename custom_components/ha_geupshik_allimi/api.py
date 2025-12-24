@@ -32,7 +32,7 @@ class GeupshikAPI:
 
                     # Check for errors or empty data
                     if "mealServiceDietInfo" not in data:
-                        return None
+                        raise ValueError("Response missing 'mealServiceDietInfo'")
                     
                     # Extract the row (lunch is typically index 0 if only lunch provided, but let's be safe)
                     # The API might return multiple rows if breakfast/dinner exists.
@@ -66,7 +66,7 @@ class GeupshikAPI:
         cleaned = cleaned.replace('<br/>', ', ').replace('/', ', ')
         
         # 4. Remove special characters (stars, hearts, bullets etc.)
-        cleaned = re.sub(r'[★♥♡●■□▲▼◆◇]', '', cleaned)
+        cleaned = re.sub(r'[*★♥♡●■□▲▼◆◇]', '', cleaned)
         
         # 5. Collapse multiple spaces/commas
         cleaned = re.sub(r'\s+', ' ', cleaned)
